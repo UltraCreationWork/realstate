@@ -1,1 +1,1 @@
-web: gunicorn content.wsgi
+web: gunicorn contentweb.wsgi
