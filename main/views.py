@@ -11,6 +11,7 @@ from .models import (
     FAQ,
     Artitecture,
     Contact,
+    Contact_Detail,
     Footer,
     PrivancyPolicy
     )

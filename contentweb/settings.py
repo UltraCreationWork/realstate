@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'storages',
     'ckeditor',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 Icon = (
@@ -302,7 +303,7 @@ class PrivancyPolicy(models.Model):
 
     def __str__(self):
         return self.title
-        
+
     class Meta:
         ordering = ["-number"]
 
@@ -324,6 +325,20 @@ class Footer(models.Model):
 
     class Meta:
         ordering = ["-serial_number"]
+
+class Contact_Detail(models.Model):
+    number = models.IntegerField(verbose_name="Serial Number")
+    location = models.CharField(max_length=30,verbose_name="Location")
+    email = models.EmailField(verbose_name="Email Address")
+    phone = PhoneNumberField(verbose_name="Phone Number")
+    tollfree = models.CharField(max_length=13,verbose_name="Toll Free Number")
+
+    def __number__(self):
+        return self.number
+
+    class Meta:
+        ordering = ["-number"]
+
 
 
 
