@@ -335,10 +335,17 @@ class Footer(models.Model):
 
 class Contact_Detail(models.Model):
     number = models.IntegerField(verbose_name="Serial Number")
-    location = models.CharField(max_length=30,verbose_name="Location")
+    content = RichTextField(verbose_name="Why Contact Us")
+    location = models.CharField(max_length=2000,verbose_name="google location")
+    address = models.CharField(max_length=20,verbose_name="Address")
+    country = models.CharField(max_length=10,default="India",verbose_name="Country")
     email = models.EmailField(verbose_name="Email Address")
     phone = PhoneNumberField(verbose_name="Phone Number")
     tollfree = models.CharField(max_length=13,verbose_name="Toll Free Number")
+    social_link_1 = models.URLField(verbose_name="Twitter link",blank=True)
+    social_link_2 = models.URLField(verbose_name="Facebook Link",blank=True)
+    social_link_3 = models.URLField(verbose_name="Instagram link",blank=True)
+    social_link_4 = models.URLField(verbose_name="Linkedin link",blank=True)
 
     def __number__(self):
         return self.number

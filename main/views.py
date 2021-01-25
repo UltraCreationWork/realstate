@@ -27,7 +27,8 @@ def home(request):
         "services":Services.objects.all(),
         "projects":Projects.objects.all(),
         "testimonials":Testimonial.objects.all(),
-        "architectures":Artitecture.objects.all()
+        "architectures":Artitecture.objects.all(),
+        "contact_details":Contact_Detail.objects.all()[:1],
 
         }
     return render(request,"index.html",data)
