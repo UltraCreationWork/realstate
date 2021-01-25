@@ -165,6 +165,8 @@ class Header(models.Model):
 
 class Aboutus(models.Model):
     number = models.IntegerField(verbose_name="serial Number")
+    img_1 = models.ImageField(upload_to="realestate/aboutus",verbose_name="About Header Image")
+    img_2 = models.ImageField(upload_to="realestate/aboutus",verbose_name="Image")
     paragraph = models.CharField(max_length=100,verbose_name="Main Paragrph")
     point_1 = models.CharField(max_length=50,verbose_name="Point one")
     point_2 = models.CharField(max_length=50,verbose_name="Point two")
@@ -211,13 +213,14 @@ class Feature(models.Model):
 
 class Testimonial(models.Model):
     name                =       models.CharField(max_length=255,verbose_name="Name")
+    prop_img            =       models.ImageField(upload_to='realestate/testimonial',verbose_name="Project Image")
     img                 =       models.ImageField(upload_to='realestate/testimonial',verbose_name="Image")
     prof                =       models.CharField(max_length=100,verbose_name="Profession")
     disc                =       models.CharField(max_length=500,verbose_name="Review")
-    social_link_f       =       models.URLField(default="facebook.com")
-    social_link_t       =       models.URLField(default="twiter.com")
-    social_link_i       =       models.URLField(default="instagram.com")
-    social_link_l       =       models.URLField(default="linkedin.com")
+    social_link_f       =       models.URLField(default="facebook.com",blank=True)
+    social_link_t       =       models.URLField(default="twiter.com",blank=True)
+    social_link_i       =       models.URLField(default="instagram.com",blank=True)
+    social_link_l       =       models.URLField(default="linkedin.com",blank=True)
 
     def __str__(self):
         return self.name
@@ -236,23 +239,25 @@ class Services(models.Model):
 
 class Projects(models.Model):
     photo           =       models.ImageField(upload_to='realestate/projects') 
-    field           =       models.CharField(max_length=255,verbose_name="Filter By")
+    field           =       models.CharField(max_length=255,verbose_name="Title")
+    date            =       models.DateField(verbose_name="Project Done Date")
     number          =       models.IntegerField(verbose_name="Serial Number")
 
     def __str__(self):
         return self.field
     
     class Meta:
-        ordering = ['number']
+        ordering = ['-number']
 
 
 
 class Artitecture(models.Model):
     name = models.CharField(max_length=15,verbose_name="Architecture Name")
+    img = models.ImageField(upload_to="realestate/architecture",verbose_name="Image")
     social_link_1 = models.URLField(verbose_name="Twitter link",blank=True)
-    social_link_1 = models.URLField(verbose_name="Facebook Link",blank=True)
-    social_link_1 = models.URLField(verbose_name="Instagram link",blank=True)
-    social_link_1 = models.URLField(verbose_name="Linkedin link",blank=True)
+    social_link_2 = models.URLField(verbose_name="Facebook Link",blank=True)
+    social_link_3 = models.URLField(verbose_name="Instagram link",blank=True)
+    social_link_4 = models.URLField(verbose_name="Linkedin link",blank=True)
     number = models.IntegerField(verbose_name="Serical Number")
 
     def __str__(self):

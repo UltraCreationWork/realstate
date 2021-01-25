@@ -23,6 +23,11 @@ def home(request):
     data = {
         "web_titles":website_title.objects.all()[:1],
         "headers":Header.objects.all(),
+        "aboutus":Aboutus.objects.all()[:1],
+        "services":Services.objects.all(),
+        "projects":Projects.objects.all(),
+        "testimonials":Testimonial.objects.all(),
+        "architectures":Artitecture.objects.all()
 
         }
     return render(request,"index.html",data)
