@@ -140,6 +140,8 @@ Icon = (
 class website_title(models.Model):
     number = models.IntegerField(verbose_name="Number")
     title  = models.CharField(max_length=100,verbose_name="Title")
+    content = models.CharField(max_length=100,verbose_name="SEO Content")
+    keywords = models.CharField(max_length=100,verbose_name="SEO Keyword Comma Seperated")
 
     def __str__(self):
         return self.title
