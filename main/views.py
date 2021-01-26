@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 from django.template.loader import get_template
+from django.views.generic import DetailView
 from .models import ( 
     website_title,
     Header,
@@ -46,6 +47,11 @@ def contact(request):
             obj.save()
             send_mail(subject=obj.subject,message=obj.message,from_email="onlinewebsitemarket@gmail.com",recipient_list=[obj.email])
             send_mail(subject="reply from UrbanSpace Realtors Pvt.Ltd.",message="Thank you for contacting us",from_email="onlinewebsitemarket@gmail.com",recipient_list=[obj.email])
-            return redirect("contact")
+            return render(request,"index.html")
     return render(request,"index.html")
+
+class header_detail_view(DetailView):
+    model = Header
+    template_name = "property-single.html"
+
     

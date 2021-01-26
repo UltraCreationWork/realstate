@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-
+{% include "hero.html" %}
 <main id="main">
   <section class="intro-single">
     <div class="container">
@@ -512,13 +512,17 @@
                       <div class="validate"></div>
                     </div>
                   </div>
-                  <!-- <div class="col-md-12 mb-3">
+                  
+                  <div class="col-md-12 mb-3">
                     <div class="mb-3">
                       <div class="loading">Loading</div>
-                      <div class="error-message"></div>
+                      {% if 'contact' %}
                       <div class="sent-message">Your message has been sent. Thank you!</div>
+                      {% else %}
+                      <div class="error-message"></div>
+                      {% endif %}
                     </div>
-                  </div> -->
+                  </div>
 
                   <div class="col-md-12 text-center">
                     <button type="submit" class="btn btn-a">Send Message</button>

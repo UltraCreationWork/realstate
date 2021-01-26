@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from phonenumber_field.modelfields import PhoneNumberField
+from django.shortcuts import reverse
 
 
 Icon = (
@@ -136,6 +137,21 @@ Icon = (
     ("ri-youtube-play","ri-youtube-play"),
     ("ri-youtube","ri-youtube")
 )
+class Artitecture(models.Model):
+    name = models.CharField(max_length=15,verbose_name="Architecture Name")
+    img = models.ImageField(upload_to="realestate/architecture",verbose_name="Image")
+    about_me = RichTextField(verbose_name="About Me")
+    social_link_1 = models.URLField(verbose_name="Twitter link",blank=True)
+    social_link_2 = models.URLField(verbose_name="Facebook Link",blank=True)
+    social_link_3 = models.URLField(verbose_name="Instagram link",blank=True)
+    social_link_4 = models.URLField(verbose_name="Linkedin link",blank=True)
+    number = models.IntegerField(verbose_name="Serical Number")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["number"]
 
 class website_title(models.Model):
     number = models.IntegerField(verbose_name="Number")
@@ -152,13 +168,22 @@ class website_title(models.Model):
 
 class Header(models.Model):
     header_img = models.ImageField(upload_to="realestate/header",verbose_name="Header Image")
+    additional_img_1 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
+    additional_img_2 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
+    property_video = models.CharField(max_length=2000,verbose_name="Iframe of your property video")
     title = models.CharField(max_length=60,verbose_name="Title")
     content = models.CharField(max_length=200,verbose_name="Content Box")
+    about_this = RichTextField(verbose_name="About This Project")
+    loacation = models.CharField(max_length=2000,verbose_name="Google location of Property")
     number = models.IntegerField(verbose_name="Serial Number")
+
 
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse("post",kwargs={"pk":self.pk})
+
     class Meta:
         ordering = ["number"]
 
@@ -251,20 +276,7 @@ class Projects(models.Model):
 
 
 
-class Artitecture(models.Model):
-    name = models.CharField(max_length=15,verbose_name="Architecture Name")
-    img = models.ImageField(upload_to="realestate/architecture",verbose_name="Image")
-    social_link_1 = models.URLField(verbose_name="Twitter link",blank=True)
-    social_link_2 = models.URLField(verbose_name="Facebook Link",blank=True)
-    social_link_3 = models.URLField(verbose_name="Instagram link",blank=True)
-    social_link_4 = models.URLField(verbose_name="Linkedin link",blank=True)
-    number = models.IntegerField(verbose_name="Serical Number")
 
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ["number"]
 
 class Price(models.Model):
     number = models.IntegerField(verbose_name=" Serial Number")
@@ -352,8 +364,6 @@ class Contact_Detail(models.Model):
 
     class Meta:
         ordering = ["-number"]
-
-
 
 
 
