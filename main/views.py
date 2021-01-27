@@ -43,6 +43,7 @@ def contact(request):
             obj = Contact()
             obj.name = request.POST.get("name")
             obj.email = request.POST.get("email")
+            obj.mobile_no = request.POST.get("mobile")
             obj.subject = request.POST.get("subject")
             obj.message = request.POST.get("message")
             obj.save()

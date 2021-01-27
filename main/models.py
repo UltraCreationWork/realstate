@@ -193,6 +193,7 @@ class FAQ(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=255,verbose_name="Name")
     email = models.EmailField(verbose_name="Email")
+    mobile_no = PhoneNumberField(verbose_name="Phone Number")
     subject = models.CharField(max_length=500,verbose_name="Subject")
     message = models.TextField(verbose_name="Messsage")
     timestamp = models.DateTimeField(auto_now_add=True,verbose_name="Time")
