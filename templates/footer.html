@@ -6,17 +6,12 @@
             <div class="w-header-a">
               <h3 class="w-title-a text-brand">UrbanSpace Realtors Pvt. Ltd.</h3>
             </div>
-            <div class="w-body-a">
-              <p class="w-text-a color-text-a">
-                
-              </p>
-            </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com</li>
+                  <span class="color-text-a">Phone .</span>+91-8448448652</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234</li>
+                  <span class="color-text-a">Email .</span>info@urbanspacerealtor.com</li>
               </ul>
             </div>
           </div>
@@ -30,16 +25,22 @@
               <div class="w-body-a">
                 <ul class="list-unstyled">
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home' %}">Home</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home' %}#about">About Us</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Architecture</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home' %}#project">Project</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home' %}#testimonials">Testimonials</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home'}#team">Leadership</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'home' %}#careers">Careers</a>
                   </li>
                   <li class="item-list-a">
                     <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
@@ -55,27 +56,30 @@
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">International sites</h3>
+              <h3 class="w-title-a text-brand">Our Presence</h3>
             </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Chhattisgarh</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">China</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Jharkhand</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Madhya Pradesh</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Maharashtra</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">New Delhi</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Odisha</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="#">Uttar Pradesh</a>
                 </li>
               </ul>
             </div>
@@ -91,54 +95,57 @@
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="{% url 'home' %}">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="{% url 'home' %}#about">About</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Projects</a>
+                <a href="{% url 'home' %}#team">Leadership</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
+                <a href="{% url 'home' %}#testimonials">Testimonials</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="{% url 'home' %}#project">Projects</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="{% url 'home' %}#contact">Contact</a>
               </li>
             </ul>
           </nav>
           <div class="socials-a">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="http://www.facebook.com/urbanspacerealtors">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://twitter.com/PvtRealtors">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="http://www.instagram.com/urbanspace.realtors">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                <a href="https://www.linkedin.com/company/urbanspace-realtors-pvt-ltd">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-dribbble" aria-hidden="true"></i>
+                <a href="http://wa.me/+918448448652">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
                 </a>
               </li>
             </ul>
           </div>
           <div class="copyright-footer">
             <p class="copyright color-text-a">
-              &copy; Copyright
+              &copy; Copyright 2021
               <span class="color-a">Urabanspace Realtors Pvt. Ltd.</span> All Rights Reserved.
             </p>
           </div>

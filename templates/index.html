@@ -111,11 +111,11 @@
         </div>
       </div>
       <div id="property-carousel" class="owl-carousel owl-theme">
-        {% for pro in Properties %}
+        {% for pro in properties %}
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="{% static 'assets/img/property-6.jpg' %}" alt="" class="img-a img-fluid">
+              <img src="{{ pro.additional_img_1.url }}" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">

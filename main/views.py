@@ -47,8 +47,8 @@ def contact(request):
             obj.subject = request.POST.get("subject")
             obj.message = request.POST.get("message")
             obj.save()
-            send_mail(subject=obj.subject,message=f"My name is \'{ obj.name}\' and contact number is \'{obj.mobile_no}\' and I want to say that \'{obj.message}\'",from_email="onlinewebsitemarket@gmail.com",recipient_list=[obj.email])
-            send_mail(subject="reply from UrbanSpace Realtors Pvt.Ltd.",message="Thank you for contacting us",from_email="onlinewebsitemarket@gmail.com",recipient_list=[obj.email])
+            send_mail(subject=obj.subject,message=f"My name is \'{ obj.name}\' and contact number is \'{obj.mobile_no}\' and I want to say that \'{obj.message}\'",from_email="onlinewebsitemarket@gmail.com",recipient_list="urbanspacerealtors.rkl@gmail.com")
+            send_mail(subject="Reply from UrbanSpace Realtors Pvt.Ltd.",message="Thank you for contacting us",from_email="onlinewebsitemarket@gmail.com",recipient_list=[obj.email])
             return render(request,"index.html")
     return render(request,"index.html")
 
