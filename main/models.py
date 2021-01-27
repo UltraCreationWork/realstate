@@ -165,12 +165,17 @@ class Projects(models.Model):
 
 class Price(models.Model):
     number = models.PositiveIntegerField(verbose_name=" Serial Number")
-    title = models.CharField(max_length=10,verbose_name="Package Name")
-    service_1 = models.CharField(max_length=20,verbose_name="Service",blank=True)
-    service_2 = models.CharField(max_length=20,verbose_name="Service number two",blank=True)
-    service_3 = models.CharField(max_length=20,verbose_name="Service number three",blank=True)
-    service_4 = models.CharField(max_length=20,verbose_name="Service number four",blank=True)
-    service_5 = models.CharField(max_length=20,verbose_name="Service number five",blank=True)
+    title = models.CharField(max_length=50,verbose_name="Package Name")
+    service_1 = models.CharField(max_length=100,verbose_name="Service",blank=True)
+    service_2 = models.CharField(max_length=100,verbose_name="Service number two",blank=True)
+    service_3 = models.CharField(max_length=100,verbose_name="Service number three",blank=True)
+    service_4 = models.CharField(max_length=100,verbose_name="Service number four",blank=True)
+    service_5 = models.CharField(max_length=100,verbose_name="Service number five",blank=True)
+    service_6 = models.CharField(max_length=100,verbose_name="Service",blank=True)
+    service_7 = models.CharField(max_length=100,verbose_name="Service number two",blank=True)
+    service_8 = models.CharField(max_length=100,verbose_name="Service number three",blank=True)
+    service_9 = models.CharField(max_length=100,verbose_name="Service number four",blank=True)
+    service_10 = models.CharField(max_length=100,verbose_name="Service number five",blank=True)
     buy_now_link = models.URLField(verbose_name="Buy Now Link")
 
     def __str__(self):

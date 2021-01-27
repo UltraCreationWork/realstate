@@ -306,7 +306,7 @@ a:hover {
 }
 
 .title-a {
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
@@ -1301,13 +1301,13 @@ a:hover {
 
 @media (min-width: 768px) {
   .card-header-a .card-title-a {
-    font-size: 1.3rem;
+    font-size: .9rem;
   }
 }
 
 @media (min-width: 992px) {
   .card-header-a .card-title-a {
-    font-size: 2rem;
+    font-size: .7rem;
   }
 }
 
@@ -1971,7 +1971,7 @@ a:hover {
 .testimonial-author {
   margin-left: 1rem;
   display: inline-flex;
-  font-size: 1.2rem;
+  font-size: .8rem;
   color: #000000;
 }
 
