@@ -4,139 +4,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.shortcuts import reverse
 
 
-Icon = (
-    ("ri-adjust","ri-adjust"),
-    ("ri-arrow-down","ri-arrow-down"),
-    ("ri-arrow-left","ri-arrow-left"),
-    ("ri-arrow-right","ri-arrow-right"),
-    ("ri-arrow-up","ri-arrow-up"),
-    ("ri-bookmark","ri-bookmark"),
-    ("ri-bucket","ri-bucket"),
-    ("ri-bullhorn","ri-bullhorn"),
-    ("ri-calendar","ri-calendar"),
-    ("ri-check-square","ri-check-square"),
-    ("ri-check","ri-check"),
-    ("ri-chevron-down","ri-chevron-down"),
-    ("ri-chevron-down-circle","ri-chevron-down-circle"),
-    ("ri-chevron-left-circle","ri-chevron-left-circle"),
-    ("ri-chevron-left","ri-chevron-left"),
-    ("ri-chevron-right-circle","ri-chevron-right-circle"),
-    ("ri-chevron-right-circle","ri-chevron-right-circle"),
-    ("ri-chevron-right","ri-chevron-right"),
-    ("ri-chevron-top-circle","ri-chevron-top-circle"),
-    ("ri-chevron-up","ri-chevron-up"),
-    ("ri-clock","ri-clock"),
-    ("ri-cloud-download","ri-cloud-download"),
-    ("ri-cloud-upload","ri-cloud-upload"),
-    ("ri-cloud","ri-cloud"),
-    ("ri-comment-bubble","ri-comment-bubble"),
-    ("ri-comment-square","ri-comment-square"),
-    ("ri-comment-txt-square","ri-comment-txt-square"),
-    ("ri-comments-bubble","ri-comments-bubble"),
-    ("ri-computer","ri-computer"),
-    ("ri-contract","ri-contract"),
-    ("ri-crop","ri-crop"),
-    ("ri-cross-circle","ri-cross-circle"),
-    ("ri-cross","ri-cross"),
-    ("ri-cutlery","ri-cutlery"),
-    ("ri-diamond","ri-diamond"),
-    ("ri-document-add","ri-document-add"),
-    ("ri-document-remove","ri-document-remove"),
-    ("ri-document","ri-document"),
-    ("ri-download","ri-download"),
-    ("ri-dribbble","ri-dribbble"),
-    ("ri-drop","ri-drop"),
-    ("ri-earth","ri-earth"),
-    ("ri-envelope","ri-envelope"),
-    ("ri-equal-circle","ri-equal-circle"),
-    ("ri-exclamation-circle","ri-exclamation-circle"),
-    ("ri-exclamation-triangle","ri-exclamation-triangle"),
-    ("ri-expand","ri-expand"),
-    ("ri-eye-close","ri-eye-close"),
-    ("ri-eye","ri-eye"),
-    ("ri-facebook","ri-facebook"),
-    ("ri-film-play","ri-film-play"),
-    ("ri-flag","ri-flag"),
-    ("ri-glasses-classic","ri-glasses-classic"),
-    ("ri-glasses-hipster","ri-glasses-hipster"),
-    ("ri-google-plus","ri-google-plus"),
-    ("ri-google","ri-google"),
-    ("ri-hamburger-circle","ri-hamburger-circle"),
-    ("ri-hamburger","ri-hamburger"),
-    ("ri-heart","ri-heart"),
-    ("ri-history","ri-history"),
-    ("ri-home","ri-home"),
-    ("ri-info-circle","ri-info-circle"),
-    ("ri-laptop","ri-laptop"),
-    ("ri-leaf","ri-leaf"),
-    ("ri-link","ri-link"),
-    ("ri-list","ri-list"),
-    ("ri-location","ri-location"),
-    ("ri-lock","ri-lock"),
-    ("ri-map-marker","ri-map-marker"),
-    ("ri-map","ri-map"),
-    ("ri-meh","ri-meh"),
-    ("ri-microphone","ri-microphone"),
-    ("ri-minus-circle","ri-minus-circle"),
-    ("ri-moon","ri-moon"),
-    ("ri-move","ri-move"),
-    ("ri-music-note-double","ri-music-note-double"),
-    ("ri-music-note","ri-music-note"),
-    ("ri-mustache","ri-mustache"),
-    ("ri-ok-circle","ri-ok-circle"),
-    ("ri-paperclip","ri-paperclip"),
-    ("ri-pencil-square","ri-pencil-square"),
-    ("ri-pencil","ri-pencil"),
-    ("ri-plus-circle","ri-plus-circle"),
-    ("ri-power-switch","ri-power-switch"),
-    ("ri-pushpin","ri-pushpin"),
-    ("ri-question-circle","ri-question-circle"),
-    ("ri-random","ri-random"),
-    ("ri-redo","ri-redo"),
-    ("ri-refresh","ri-refresh"),
-    ("ri-resize-full","ri-resize-full"),
-    ("ri-resize-h","ri-resize-h"),
-    ("ri-resize-small","ri-resize-small"),
-    ("ri-resize-v","ri-resize-v"),
-    ("ri-retweet","ri-retweet"),
-    ("ri-rivoli","ri-rivoli"),
-    ("ri-sad","ri-sad"),
-    ("ri-search-minus","ri-search-minus"),
-    ("ri-search-plus","ri-search-plus"),
-    ("ri-search","ri-search"),
-    ("ri-share-square","ri-share-square"),
-    ("ri-share","ri-share"),
-    ("ri-shopping-cart","ri-shopping-cart"),
-    ("ri-smile","ri-smile"),
-    ("ri-star-half-empty","ri-star-half-empty"),
-    ("ri-star","ri-star"),
-    ("ri-stats","ri-stats"),
-    ("ri-sun","ri-sun"),
-    ("ri-tag","ri-tag"),
-    ("ri-th-large","ri-th-large"),
-    ("ri-th-large","ri-th-large"),
-    ("ri-th-list","ri-th-list"),
-    ("ri-th","ri-th"),
-    ("ri-thumbs-down","ri-thumbs-down"),
-    ("ri-thumbs-up","ri-thumbs-up"),
-    ("ri-trash","ri-trash"),
-    ("ri-tumblr","ri-tumblr"),
-    ("ri-twitter","ri-twitter"),
-    ("ri-undo","ri-undo"),
-    ("ri-unlink","ri-unlink"),
-    ("ri-unlock","ri-unlock"),
-    ("ri-upload","ri-upload"),
-    ("ri-user-girl","ri-user-girl"),
-    ("ri-user","ri-user"),
-    ("ri-users","ri-users"),
-    ("ri-volume-level-one","ri-volume-level-one"),
-    ("ri-volume-level-three","ri-volume-level-three"),
-    ("ri-volume-level-two","ri-volume-level-two"),
-    ("ri-volume","ri-volume"),
-    ("ri-wrench","ri-wrench"),
-    ("ri-youtube-play","ri-youtube-play"),
-    ("ri-youtube","ri-youtube")
-)
+
 class Artitecture(models.Model):
     name = models.CharField(max_length=15,verbose_name="Architecture Name")
     img = models.ImageField(upload_to="realestate/architecture",verbose_name="Image")
@@ -145,7 +13,7 @@ class Artitecture(models.Model):
     social_link_2 = models.URLField(verbose_name="Facebook Link",blank=True)
     social_link_3 = models.URLField(verbose_name="Instagram link",blank=True)
     social_link_4 = models.URLField(verbose_name="Linkedin link",blank=True)
-    number = models.IntegerField(verbose_name="Serical Number")
+    number = models.PositiveIntegerField(verbose_name="Serical Number")
 
     def __str__(self):
         return self.name
@@ -154,7 +22,7 @@ class Artitecture(models.Model):
         ordering = ["number"]
 
 class website_title(models.Model):
-    number = models.IntegerField(verbose_name="Number")
+    number = models.PositiveIntegerField(verbose_name="Number")
     title  = models.CharField(max_length=100,verbose_name="Title")
     content = models.CharField(max_length=100,verbose_name="SEO Content")
     keywords = models.CharField(max_length=100,verbose_name="SEO Keyword Comma Seperated")
@@ -175,7 +43,7 @@ class Header(models.Model):
     content = models.CharField(max_length=200,verbose_name="Content Box")
     about_this = RichTextField(verbose_name="About This Project")
     loacation = models.CharField(max_length=2000,verbose_name="Google location of Property")
-    number = models.IntegerField(verbose_name="Serial Number")
+    number = models.PositiveIntegerField(verbose_name="Serial Number")
 
 
     def __str__(self):
@@ -189,7 +57,7 @@ class Header(models.Model):
 
 
 class Aboutus(models.Model):
-    number = models.IntegerField(verbose_name="serial Number")
+    number = models.PositiveIntegerField(verbose_name="serial Number")
     img_1 = models.ImageField(upload_to="realestate/aboutus",verbose_name="About Header Image")
     img_2 = models.ImageField(upload_to="realestate/aboutus",verbose_name="Image")
     paragraph = models.CharField(max_length=100,verbose_name="Main Paragrph")
@@ -205,8 +73,8 @@ class Aboutus(models.Model):
 
 
 class Feature(models.Model):
-    number = models.IntegerField(verbose_name="Featur Serial Number")
-    icon = models.CharField(max_length=23,choices=Icon)
+    number = models.PositiveIntegerField(verbose_name="Featur Serial Number")
+    icon = models.CharField(max_length=23,verbose_name="Icon")
     title = models.CharField(max_length=100,verbose_name="Feature Name")
     img = models.ImageField(upload_to="realestate/feature",verbose_name="Image of Work")
     paragraph = RichTextField(verbose_name="Feature Discription")
@@ -251,10 +119,10 @@ class Testimonial(models.Model):
         return self.name
 
 class Services(models.Model):
-    symbol = models.CharField(max_length=255 ,blank=True,verbose_name="Synbol")
+    symbol = models.CharField(max_length=255,blank=True,verbose_name="Icon")
     name = models.CharField(max_length=500,verbose_name="Name")
     dics = RichTextField(verbose_name="Content")
-    number = models.IntegerField(verbose_name="Number")
+    number = models.PositiveIntegerField(verbose_name="Number")
 
     def __str__(self):
         return self.name
@@ -266,7 +134,7 @@ class Projects(models.Model):
     photo           =       models.ImageField(upload_to='realestate/projects') 
     field           =       models.CharField(max_length=255,verbose_name="Title")
     date            =       models.DateField(verbose_name="Project Done Date")
-    number          =       models.IntegerField(verbose_name="Serial Number")
+    number          =       models.PositiveIntegerField(verbose_name="Serial Number")
 
     def __str__(self):
         return self.field
@@ -279,7 +147,7 @@ class Projects(models.Model):
 
 
 class Price(models.Model):
-    number = models.IntegerField(verbose_name=" Serial Number")
+    number = models.PositiveIntegerField(verbose_name=" Serial Number")
     title = models.CharField(max_length=10,verbose_name="Package Name")
     service_1 = models.CharField(max_length=20,verbose_name="Service",blank=True)
     service_2 = models.CharField(max_length=20,verbose_name="Service number two",blank=True)
@@ -294,7 +162,7 @@ class Price(models.Model):
         ordering = ["-number"]
 
 class FAQ(models.Model):
-    number = models.IntegerField(verbose_name="Question Number")
+    number = models.PositiveIntegerField(verbose_name="Question Number")
     question = models.CharField(max_length=50,verbose_name="Question")
     answer = RichTextField(verbose_name="Answer of this question")
 
@@ -316,7 +184,7 @@ class Contact(models.Model):
         return self.name
 
 class PrivancyPolicy(models.Model):
-    number = models.IntegerField(verbose_name="Serial Number")
+    number = models.PositiveIntegerField(verbose_name="Serial Number")
     title = models.CharField(max_length=20,verbose_name="Title")
     content = RichTextField()
 
@@ -337,7 +205,7 @@ class Footer(models.Model):
     link_2 = models.URLField(verbose_name="Facebook link")
     link_3 = models.URLField(verbose_name="Instagram link")
     link_4 = models.URLField(verbose_name="Linkedin link")
-    serial_number = models.IntegerField(verbose_name="Serial Number")
+    serial_number = models.PositiveIntegerField(verbose_name="Serial Number")
     
     def __str__(self):
         return self.title
@@ -346,7 +214,7 @@ class Footer(models.Model):
         ordering = ["-serial_number"]
 
 class Contact_Detail(models.Model):
-    number = models.IntegerField(verbose_name="Serial Number")
+    number = models.PositiveIntegerField(verbose_name="Serial Number")
     content = RichTextField(verbose_name="Why Contact Us")
     location = models.CharField(max_length=2000,verbose_name="google location")
     address = models.CharField(max_length=20,verbose_name="Address")
