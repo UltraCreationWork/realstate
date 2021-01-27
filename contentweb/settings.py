@@ -149,10 +149,10 @@ LOGIN_REDIRECT_URL = "/"
 # email backend
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "onlinewebsitemarket@gmail.com"
-EMAIL_HOST_PASSWORD = "weckbhyqcfcepjtn"
+EMAIL_HOST_USER = "urbanspacerealtors.rkl@gmail.com"
+EMAIL_HOST_PASSWORD = "kjmlexqlshxaytog"
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'UltraCreation Team <noreply@onlinewebsitemarket.com>'
+DEFAULT_FROM_EMAIL = 'UrbanSpace Realtors Pvt.Ltd. Team <noreply@onlinewebsitemarket.com>'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SERVER_EMAIL = 'ishwarjethwaniillustration@gmail.com'
 
