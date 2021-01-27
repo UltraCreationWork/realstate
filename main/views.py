@@ -25,7 +25,8 @@ from .models import (
 def home(request):
     data = {
         "web_titles":website_title.objects.all()[:1],
-        "headers":Header.objects.all(),
+        "headers":Header.objects.all()[:4],
+        "properties":Header.objects.all(),
         "aboutus":Aboutus.objects.all()[:1],
         "services":Services.objects.all(),
         "projects":Projects.objects.all(),

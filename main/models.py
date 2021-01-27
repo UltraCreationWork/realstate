@@ -33,8 +33,15 @@ class website_title(models.Model):
     class Meta:
         ordering = ["-number"]
 
-
+choise = (
+    ("For Sell","For Sell"),
+    ("For Rent","For Rent")
+)
 class Header(models.Model):
+    property_id = models.CharField(verbose_name="Poperty Id",max_length=16)
+    property_type = models.CharField(verbose_name="Type Of Property",max_length=20)
+    status = models.CharField(choices=choise,verbose_name="Perpose",max_length=10)
+    address = models.CharField(verbose_name="Address",max_length=100)
     header_img = models.ImageField(upload_to="realestate/header",verbose_name="Header Image")
     additional_img_1 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
     additional_img_2 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
@@ -44,6 +51,16 @@ class Header(models.Model):
     about_this = RichTextField(verbose_name="About This Project")
     loacation = models.CharField(max_length=2000,verbose_name="Google location of Property")
     number = models.PositiveIntegerField(verbose_name="Serial Number")
+    price = models.PositiveIntegerField(verbose_name="Price")
+    area  = models.PositiveIntegerField(verbose_name="Area In Squre Ft.")
+    hall = models.PositiveIntegerField(verbose_name="Number of Hall")
+    beds = models.PositiveIntegerField(verbose_name="Number of Bedroom")
+    bath = models.PositiveIntegerField(verbose_name="Nomber of Baths")
+    
+
+
+
+
 
 
     def __str__(self):
