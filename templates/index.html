@@ -4,7 +4,7 @@
 
 {% include "hero.html" %}
 <main id="main">
-  <section class="intro-single">
+  <section id="about" class="intro-single">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-8">
@@ -309,18 +309,13 @@
   </section>End Latest Properties Section -->
 
   <!-- ======= Agents Section ======= -->
-  <section class="section-agents section-t8">
+  <section id="team" class="section-agents section-t8">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Best Architecture</h2>
-            </div>
-            <div class="title-link">
-              <a href="">See More
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
+              <h2 class="title-a">Team</h2>
             </div>
           </div>
         </div>
@@ -375,7 +370,7 @@
   </section><!-- End Agents Section -->
 
   <!-- ======= Latest News Section ======= -->
-  <section class="section-news section-t8">
+  <section id="project" class="section-news section-t8">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -411,7 +406,7 @@
   </section><!-- End Latest News Section -->
 
   <!-- ======= Testimonials Section ======= -->
-  <section class="section-testimonials section-t8 nav-arrow-a">
+  <section id="testimonials" class="section-testimonials section-t8 nav-arrow-a">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -455,7 +450,7 @@
       </div>
     </div>
   </section><!-- End Testimonials Section -->
-  <section class="intro-single">
+  <section id="contact" class="intro-single">
     <div class="container">
       {% for cont in contact_details %}
       <div class="row">
