@@ -77,10 +77,10 @@ class Aboutus(models.Model):
     number = models.PositiveIntegerField(verbose_name="serial Number")
     img_1 = models.ImageField(upload_to="realestate/aboutus",verbose_name="About Header Image")
     img_2 = models.ImageField(upload_to="realestate/aboutus",verbose_name="Image")
-    paragraph = models.CharField(max_length=100,verbose_name="Main Paragrph")
-    point_1 = models.CharField(max_length=50,verbose_name="Point one")
-    point_2 = models.CharField(max_length=50,verbose_name="Point two")
-    point_3 = models.CharField(max_length=50,verbose_name="Point three")
+    paragraph = models.CharField(max_length=100,verbose_name="Main Paragrph",blank=True)
+    point_1 = models.CharField(max_length=50,verbose_name="Point one",blank=True)
+    point_2 = models.CharField(max_length=50,verbose_name="Point two",blank=True)
+    point_3 = models.CharField(max_length=50,verbose_name="Point three",blank=True)
     content = RichTextField(verbose_name="About Us Content Box")
 
     def __number__(self):
