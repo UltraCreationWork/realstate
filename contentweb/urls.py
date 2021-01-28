@@ -23,7 +23,7 @@ def trigger_error(request):
     division_by_zero = 1 / 0
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adminurban/', admin.site.urls),
     path("",include("main.urls")),
     path('sentry-debug/', trigger_error),
 ]
