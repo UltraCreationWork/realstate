@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Testimonial Form</h1>
+                        <span class="color-text-a">UrbanSpace Realtors Ptv. Ltd.</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Testimonials Form
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= Blog Single ======= -->
+    <section class="news-single nav-arrow-b">
+        <div class="container">
+
+            <form enctype="multipart/form-data" method="POST" action=".">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <input name="name" type="text" class="form-control form-control-lg form-control-a"
+                            placeholder="First name" data-rule="required" data-msg="Write your good name">
+                    </div>
+                    <div class="col">
+                        <input name="prof" type="text" class="form-control form-control-lg form-control-a"
+                            placeholder="Profession" data-rule="required" data-msg="Write your Profession">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 1%;">
+                    <div class="col">
+                        <input name="prop_img" type="file" class="form-control form-control-lg form-control-a"
+                            placeholder="Project Image" enctype="multipart/form-data" data-rule="required" data-msg="Upload your project image">
+                    </div>
+                    <div class="col">
+                        <input name="img" type="file" data-rule="required" enctype="multipart/form-data"
+                            class="form-control form-control-lg form-control-a" placeholder="Profile Image"
+                            data-msg="Upload your image">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 1%;">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea name="disc" class="form-control form-control-lg form-control-a" name="disc"
+                                cols="45" rows="8" data-rule="required" data-msg="Please write something for us"
+                                placeholder="Your Point Of View About Our Work"></textarea>
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 1%;">
+                        <input name="facebook" type="url" enctype="multipart/form-data"
+                            class="form-control form-control-lg form-control-a" placeholder="Facebook Profile Link"
+                            data-rule="optional">
+                    </div>
+                    <div class="col-md-3" style="margin-top: 1%;">
+                        <input name="twitter" type="url" data-rule="optional"
+                            class="form-control form-control-lg form-control-a" placeholder="Twitter Profile link">
+                    </div>
+                    <div class="col-md-3" style="margin-top: 1%;">
+                        <input name="instagram" type="url" data-rule="optional"
+                            class="form-control form-control-lg form-control-a" placeholder="Instagram Profile Link">
+                    </div>
+                    <div class="col-md-3" style="margin-top: 1%;">
+                        <input name="linkedin" type="url" data-rule="optional"
+                            class="form-control form-control-lg form-control-a" placeholder="Linkedin Profile Link">
+                    </div>
+                </div>
+                <div class="col-md-12 text-center" style="margin-top: 2%;">
+                    <button type="submit" class="btn btn-a btn-lg btn-block">Submit</button>
+                </div>
+            ,</form>   
+        </div>
+
+    </section><!-- End Blog Single-->
+
+</main><!-- End #main -->
+{% endblock content %}

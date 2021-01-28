@@ -63,4 +63,21 @@ def privacypolicy(request):
     }
     return render(request,"privacy.html",data)
 
+def testimonal_add(request):
+    if request.method == "POST":
+        obj = Testimonial()
+        obj.name = request.POST.get("name")
+        obj.prop_img = request.FILES.get("prop_img")
+        obj.img = request.FILES.get("img")
+        obj.prof = request.POST.get("prof")
+        obj.disc = request.POST.get("disc")
+        obj.social_link_f = request.POST.get("facebook")
+        obj.social_link_t = request.POST.get("twitter")
+        obj.social_link_i = request.POST.get("instagram")
+        obj.social_link_l = request.POST.get("linkedin")
+        obj.save()
+        return render(request,"thankyou.html")
+    return render(request,"testimonialform.html")
+
+
     
