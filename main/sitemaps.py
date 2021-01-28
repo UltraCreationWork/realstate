@@ -10,7 +10,7 @@ class Postsitemaps(Sitemap):
 class Staticsitemaps(Sitemap):
     
     def item(self):
-        return ['home','course','topic','contact']
+        return ['home','post','privacy','contact',"testimonial_add"]
 
     def location(self,item):
         return reverse(item)

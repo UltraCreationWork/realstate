@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'storages',
     'ckeditor',
     'phonenumber_field',
+    'django.contrib.sitemaps'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
