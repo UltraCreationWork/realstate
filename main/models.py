@@ -34,7 +34,7 @@ class website_title(models.Model):
         ordering = ["-number"]
 
 choise = (
-    ("For Sell","For Sell"),
+    ("For Sale","For Sale"),
     ("For Rent","For Rent")
 )
 class Header(models.Model):

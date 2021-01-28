@@ -23,10 +23,10 @@
               <div class="property-price d-flex justify-content-center foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="ion-money">$</span>
+                    <span class="ion-money">₹</span>
                   </div>
                   <div class="card-title-c align-self-center">
-                    <h5 class="title-c">15000</h5>
+                    <h5 class="title-c">{{ object.price }}</h5>
                   </div>
                 </div>
               </div>
@@ -42,33 +42,33 @@
                   <ul class="list">
                     <li class="d-flex justify-content-between">
                       <strong>Property ID:</strong>
-                      <span>1134</span>
+                      <span>{{ object.property_id }}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Location:</strong>
-                      <span>Chicago, IL 606543</span>
+                      <span>{{ object.address }}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Property Type:</strong>
-                      <span>House</span>
+                      <span>{{ object.property_type }}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Status:</strong>
-                      <span>Sale</span>
+                      <span>{{ object.status }}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Area:</strong>
-                      <span>340m
+                      <span>{{ object.area }}sq.ft
                         <sup>2</sup>
                       </span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Beds:</strong>
-                      <span>4</span>
+                      <span>{{ object.beds }}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Baths:</strong>
-                      <span>2</span>
+                      <span>{{ object.bath }}</span>
                     </li>
                   </ul>
                 </div>
