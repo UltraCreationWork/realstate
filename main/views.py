@@ -33,6 +33,7 @@ def home(request):
         "testimonials":Testimonial.objects.all(),
         "architectures":Artitecture.objects.all(),
         "contact_details":Contact_Detail.objects.all()[:1],
+        "pricing":Price.objects.all(),
 
         }
     return render(request,"index.html",data)

@@ -165,6 +165,8 @@ class Projects(models.Model):
 
 class Price(models.Model):
     number = models.PositiveIntegerField(verbose_name=" Serial Number")
+    price = models.PositiveIntegerField(verbose_name="service charge")
+    parameter = models.CharField(max_length=10,verbose_name="basis of parameter like (month,squre ft,squre meeter etc.)")
     title = models.CharField(max_length=50,verbose_name="Package Name")
     service_1 = models.CharField(max_length=100,verbose_name="Service",blank=True)
     service_2 = models.CharField(max_length=100,verbose_name="Service number two",blank=True)
