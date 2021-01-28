@@ -80,5 +80,8 @@ def testimonal_add(request):
         return render(request,"thankyou.html")
     return render(request,"testimonialform.html")
 
+def carrier(request):
+    return render(request,"career.html")
+
 
     
