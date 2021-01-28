@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+  <main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Privacy Policy</h1>
+              <span class="color-text-a">UrbanSpace Realtors Ptv. Ltd.</span>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Privacy Policy
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= Blog Single ======= -->
+    <section class="news-single nav-arrow-b">
+      <div class="container">
+        <div class="row">
+          {% for pri in privacypolicies %}
+          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <div class="post-content color-text-a">
+              <p class="post-intro">
+               {{pri.title }}
+              </p>
+              <p>
+               {{ pri.content|safe }}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section><!-- End Blog Single-->
+
+  </main><!-- End #main -->
+{% endblock content %}

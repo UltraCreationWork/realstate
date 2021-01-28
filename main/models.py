@@ -206,10 +206,10 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-class PrivancyPolicy(models.Model):
+class PrivacyPolicy(models.Model):
     number = models.PositiveIntegerField(verbose_name="Serial Number")
     title = models.CharField(max_length=20,verbose_name="Title")
-    content = RichTextField()
+    content = RichTextField(verbose_name="Content")
 
     def __str__(self):
         return self.title

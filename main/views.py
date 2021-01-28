@@ -16,7 +16,7 @@ from .models import (
     Contact,
     Contact_Detail,
     Footer,
-    PrivancyPolicy
+    PrivacyPolicy
     )
 
 
@@ -55,5 +55,12 @@ def contact(request):
 class header_detail_view(DetailView):
     model = Header
     template_name = "property-single.html"
+
+
+def privacypolicy(request):
+    data = {
+        "privacypolicies" :PrivacyPolicy.objects.all()[:1]
+    }
+    return render(request,"privacy.html",data)
 
     
