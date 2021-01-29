@@ -1,9 +1,3 @@
-/**
-* Template Name: EstateAgency - v2.1.0
-* Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function($) {
   "use strict";
 
@@ -120,6 +114,26 @@
     responsive: {
       0: {
         items: 1,
+      }
+    }
+  });
+
+  // sevice carousel
+
+
+  // price crousel
+  $('#price-crousel').owlCarousel({
+    loop: true,
+    margin: 1,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      769: {
+        items: 2,
+      },
+      992: {
+        items: 3,
       }
     }
   });
