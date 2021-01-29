@@ -1,114 +1,121 @@
 <style>
-  .pricing .box {
-    padding: 20px;
-    background: #fff;
-    text-align: center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-  }
+  @media (min-width: 992px) {
+    .col-lg-3 {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 100%;
+    }}
 
-  .pricing h3 {
-    font-weight: 400;
-    margin: -20px -20px 25px -20px;
-    padding: 30px 15px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #777777;
-    background: #f8f8f8;
-  }
+    .pricing .box {
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .pricing h4 {
-    font-size: 36px;
-    color: #2eca6a;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 20px;
-  }
+    .pricing h3 {
+      font-weight: 400;
+      margin: -20px -20px 25px -20px;
+      padding: 30px 15px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #777777;
+      background: #f8f8f8;
+    }
 
-  .pricing h4 sup {
-    font-size: 20px;
-    top: -15px;
-    left: -3px;
-  }
+    .pricing h4 {
+      font-size: 36px;
+      color: #2eca6a;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 20px;
+    }
 
-  .pricing h4 span {
-    color: #bababa;
-    font-size: 16px;
-    font-weight: 300;
-  }
+    .pricing h4 sup {
+      font-size: 20px;
+      top: -15px;
+      left: -3px;
+    }
 
-  .pricing ul {
-    padding: 0;
-    list-style: none;
-    color: #444444;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-  }
+    .pricing h4 span {
+      color: #bababa;
+      font-size: 16px;
+      font-weight: 300;
+    }
 
-  .pricing ul li {
-    padding-bottom: 16px;
-  }
+    .pricing ul {
+      padding: 0;
+      list-style: none;
+      color: #444444;
+      text-align: center;
+      line-height: 20px;
+      font-size: 14px;
+    }
 
-  .pricing ul i {
-    color: #2eca6a;
-    font-size: 18px;
-    padding-right: 4px;
-  }
+    .pricing ul li {
+      padding-bottom: 16px;
+    }
 
-  .pricing ul .na {
-    color: #ccc;
-    text-decoration: line-through;
-  }
+    .pricing ul i {
+      color: #2eca6a;
+      font-size: 18px;
+      padding-right: 4px;
+    }
 
-  .pricing .btn-wrap {
-    margin: 20px -20px -20px -20px;
-    padding: 20px 15px;
-    background: #f8f8f8;
-    text-align: center;
-  }
+    .pricing ul .na {
+      color: #ccc;
+      text-decoration: line-through;
+    }
 
-  .pricing .btn-buy {
-    background: #2eca6a;
-    display: inline-block;
-    padding: 8px 35px 10px 35px;
-    border-radius: 50px;
-    color: #fff;
-    transition: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    transition: 0.3s;
-  }
+    .pricing .btn-wrap {
+      margin: 20px -20px -20px -20px;
+      padding: 20px 15px;
+      background: #f8f8f8;
+      text-align: center;
+    }
 
-  .pricing .btn-buy:hover {
-    background: #57d186;
-  }
+    .pricing .btn-buy {
+      background: #2eca6a;
+      display: inline-block;
+      padding: 8px 35px 10px 35px;
+      border-radius: 50px;
+      color: #fff;
+      transition: none;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-  .pricing .featured {
-    border: 2px solid #2eca6a;
-  }
+    .pricing .btn-buy:hover {
+      background: #57d186;
+    }
 
-  .pricing .featured h3 {
-    color: #fff;
-    background: #2eca6a;
-  }
+    .pricing .featured {
+      border: 2px solid #2eca6a;
+    }
 
-  .pricing .advanced {
-    width: 200px;
-    position: absolute;
-    top: 18px;
-    right: -68px;
-    transform: rotate(45deg);
-    z-index: 1;
-    font-size: 14px;
-    padding: 1px 0 3px 0;
-    background: #2eca6a;
-    color: #fff;
-  }
+    .pricing .featured h3 {
+      color: #fff;
+      background: #2eca6a;
+    }
+
+    .pricing .advanced {
+      width: 200px;
+      position: absolute;
+      top: 18px;
+      right: -68px;
+      transform: rotate(45deg);
+      z-index: 1;
+      font-size: 14px;
+      padding: 1px 0 3px 0;
+      background: #2eca6a;
+      color: #fff;
+    }
 </style>
 <section style="margin-top:2%;" id="pricing" class="pricing">
   <div class="container">
