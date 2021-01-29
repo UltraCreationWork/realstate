@@ -263,4 +263,46 @@ class Contact_Detail(models.Model):
         ordering = ["-number"]
 
 
+class Career_header(models.Model):
+    title = models.CharField(max_length=50,verbose_name="image tittle")
+    img = models.ImageField(verbose_name="Image For Career Page")
+    date = models.DateField(auto_now_add=True)
+    number = models.IntegerField(verbose_name="Serial Number")
 
+    def __str__(self):
+        return self.title
+    class Meta:
+        ordering = ["-number"]
+
+
+
+class Career(models.Model):
+    number = models.PositiveIntegerField(verbose_name="Featur Serial Number")
+    icon = models.CharField(max_length=23,verbose_name="Icon")
+    title = models.CharField(max_length=100,verbose_name="Post Name")
+    img = models.ImageField(upload_to="realestate/feature",verbose_name="Image of Work")
+    paragraph = RichTextField(verbose_name="Post Discription")
+    point_1 = models.CharField(max_length=200,verbose_name="heading",blank=True)
+    point_2 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_3 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_4 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_5 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_6 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_7 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_8 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_9 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_10 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_11 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_12 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_13 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_14 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    point_15 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse("career_detail",kwargs={"pk":self.pk})
+    
+    class Meta:
+        ordering = ["number"]

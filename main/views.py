@@ -16,7 +16,9 @@ from .models import (
     Contact,
     Contact_Detail,
     Footer,
-    PrivacyPolicy
+    PrivacyPolicy,
+    Career,
+    Career_header
     )
 
 
@@ -37,6 +39,7 @@ def home(request):
 
         }
     return render(request,"index.html",data)
+    
 
 
 def contact(request):
@@ -85,7 +88,16 @@ class Project_detail(DetailView):
     model = Projects
 
 def carrier(request):
-    return render(request,"career.html")
+    data = { 
+        "careers":Career.objects.all(),
+        "career_header":Career_header.objects.all()[:1]
+     }
+    return render(request,"career.html",data)
+
+class Carrier_detail(DetailView):
+    template_name = "career_detail.html"
+    model = Career
+
 
 
     

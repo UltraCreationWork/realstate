@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Careers</h1>
+              <span class="color-text-a">Detail</span>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  career detail
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= Blog Single ======= -->
+    <section class="news-single nav-arrow-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="news-img-box">
+              <img src="{{ object.img.url }}" alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <div class="post-content color-text-a">
+              <p>
+                {{ object.paragraph|safe }}
+              </p>
+              <p>
+                {{ object.point_2 }}
+              </p>
+              <p>
+                {{ object.point_3}}
+              </p>
+              <p>
+                {{ object.point_4}}
+              </p>
+              <p>
+                {{ object.point_5}}
+              </p>
+              <p>
+                {{ object.point_6}}
+              </p>
+              <p>
+                {{ object.point_7}}
+              </p> 
+              <p>
+                {{ object.point_8 }}
+              </p>
+              <p>
+                {{ object.point_9 }}
+              </p>
+              <p>
+                {{ object.point_10 }}
+              </p>
+              <p>
+                {{ object.point_11 }}
+              </p>
+              <p>
+                {{ object.point_12 }}
+              </p>
+              <p>
+                {{ object.point_13 }}
+              </p>
+              <p>
+                {{ object.point_14 }}
+              </p>
+              <p>
+                {{ object.point_15 }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Single-->
+
+  </main><!-- End #main -->
+
+ {% endblock content %}

@@ -20,35 +20,31 @@
           <a class="nav-link" href="{% url 'home' %}#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}#project">Projects</a>
+          <a class="nav-link" href="{% url 'home' %}#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}#testimonials">Testimonials</a>
+          <a class="nav-link" href="{% url 'home' %}#property">Property</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#leadership">Leadership</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}#team">Team</a>
+          <a class="nav-link" href="{% url 'home' %}#project">Pojects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#testimonial">Testimonials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#pricing">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'career' %}">Careers</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home' %}#contact">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}#careers">Careers</a>
-        </li>
-        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-          var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-          (function () {
-            var s1 = document.createElement("script"),
-              s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6012c6eba9a34e36b97160d8/1et4li2m1';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-          })();
-        </script>
-
+        
       </ul>
     </div>
     <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
@@ -57,3 +53,8 @@
     </button>
   </div>
 </nav><!-- End Header/Navbar -->
+<script>
+  $('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
+</script>
