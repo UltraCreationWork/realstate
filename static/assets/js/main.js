@@ -92,6 +92,7 @@
   $('#property-carousel').owlCarousel({
     loop: true,
     margin: 30,
+    autoplay : true,
     responsive: {
       0: {
         items: 1,
@@ -108,6 +109,7 @@
   /*--/ Property owl owl /--*/
   $('#property-single-carousel').owlCarousel({
     loop: true,
+    autoplay : true,
     margin: 0,
     nav: true,
     navText: ['<i class="ion-ios-arrow-back" aria-hidden="true"></i>', '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'],
@@ -124,6 +126,7 @@
   // price crousel
   $('#price-crousel').owlCarousel({
     loop: true,
+    autoplay : true,
     margin: 1,
     responsive: {
       0: {
@@ -141,6 +144,7 @@
   /*--/ News owl /--*/
   $('#new-carousel').owlCarousel({
     loop: true,
+    autoplay : true,
     margin: 30,
     responsive: {
       0: {
