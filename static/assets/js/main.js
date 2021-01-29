@@ -125,26 +125,12 @@
   });
 
   // sevice carousel
-  $('#service-crousel').owlCarousel({
-    loop: true,
-    margin: 30,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      769: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      }
-    }
-  });
+
 
   // price crousel
   $('#price-crousel').owlCarousel({
     loop: true,
-    margin: 30,
+    margin: 5,
     responsive: {
       0: {
         items: 3,
