@@ -127,12 +127,16 @@
   // sevice carousel
   $('#service-crousel').owlCarousel({
     loop: true,
-    margin: 0,
-    nav: true,
-    navText: ['<i class="ion-ios-arrow-back" aria-hidden="true"></i>', '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'],
+    margin: 30,
     responsive: {
       0: {
         items: 1,
+      },
+      769: {
+        items: 2,
+      },
+      992: {
+        items: 3,
       }
     }
   });
@@ -140,12 +144,16 @@
   // price crousel
   $('#price-crousel').owlCarousel({
     loop: true,
-    margin: 0,
-    nav: true,
-    navText: ['<i class="ion-ios-arrow-back" aria-hidden="true"></i>', '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'],
+    margin: 30,
     responsive: {
       0: {
         items: 1,
+      },
+      769: {
+        items: 2,
+      },
+      992: {
+        items: 3,
       }
     }
   });
