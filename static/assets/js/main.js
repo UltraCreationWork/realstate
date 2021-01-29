@@ -150,10 +150,10 @@
     margin: 30,
     responsive: {
       0: {
-        items: 3,
+        items: 1,
       },
       769: {
-        items: 3,
+        items: 2,
       },
       992: {
         items: 3,
