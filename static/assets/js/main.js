@@ -147,10 +147,10 @@
     margin: 30,
     responsive: {
       0: {
-        items: 1,
+        items: 3,
       },
       769: {
-        items: 2,
+        items: 3,
       },
       992: {
         items: 3,
@@ -164,10 +164,10 @@
     margin: 30,
     responsive: {
       0: {
-        items: 1,
+        items: 3,
       },
       769: {
-        items: 2,
+        items: 3,
       },
       992: {
         items: 3,
