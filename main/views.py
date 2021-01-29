@@ -80,6 +80,10 @@ def testimonal_add(request):
         return render(request,"thankyou.html")
     return render(request,"testimonialform.html")
 
+class Project_detail(DetailView):
+    template_name="project.html"
+    model = Projects
+
 def carrier(request):
     return render(request,"career.html")
 

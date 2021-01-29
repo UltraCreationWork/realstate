@@ -150,11 +150,15 @@ class Services(models.Model):
 class Projects(models.Model):
     photo           =       models.ImageField(upload_to='realestate/projects') 
     field           =       models.CharField(max_length=255,verbose_name="Title")
+    content         =       RichTextField(verbose_name="Content")
     date            =       models.DateField(verbose_name="Project Done Date")
     number          =       models.PositiveIntegerField(verbose_name="Serial Number")
 
     def __str__(self):
         return self.field
+    
+    def get_absolute_url(self):
+        return reverse("detail",kwargs={"pk":self.pk})
     
     class Meta:
         ordering = ['-number']
