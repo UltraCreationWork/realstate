@@ -297,6 +297,7 @@ class Career(models.Model):
     point_13 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
     point_14 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
     point_15 = models.CharField(max_length=200,verbose_name="Requrements",blank=True)
+    url = models.URLField(verbose_name="application url",blank=True)
 
     def __str__(self):
         return self.title
