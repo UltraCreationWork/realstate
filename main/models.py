@@ -35,12 +35,13 @@ class website_title(models.Model):
 
 choise = (
     ("For Sale","For Sale"),
-    ("For Rent","For Rent")
+    ("For Rent","For Rent"),
+    ("For Design","For Design")
 )
 class Header(models.Model):
     property_id = models.CharField(verbose_name="Poperty Id",max_length=16)
     property_type = models.CharField(verbose_name="Type Of Property",max_length=20)
-    status = models.CharField(choices=choise,verbose_name="Perpose",max_length=10)
+    status = models.CharField(choices=choise,verbose_name="Perpose",max_length=10,blank=True)
     address = models.CharField(verbose_name="Address",max_length=100,blank=True)
     header_img = models.ImageField(upload_to="realestate/header",verbose_name="Header Image")
     additional_img_1 = models.ImageField(upload_to="realestate/property",verbose_name="Side image",blank=True)
