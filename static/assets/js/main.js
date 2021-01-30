@@ -127,6 +127,7 @@
   $('#price-crousel').owlCarousel({
     loop: true,
     autoplay : true,
+    slidespeed:1000*10,
     margin: 1,
     responsive: {
       0: {
@@ -145,6 +146,7 @@
   $('#new-carousel').owlCarousel({
     loop: true,
     autoplay : true,
+    
     margin: 30,
     responsive: {
       0: {
@@ -177,3 +179,6 @@
   });
 
 })(jQuery);
+$('.navbar-nav>li>a').on('click', function(){
+  $('.navbar-collapse').collapse('hide');
+});

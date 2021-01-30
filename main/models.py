@@ -47,15 +47,15 @@ class Header(models.Model):
     additional_img_2 = models.ImageField(upload_to="realestate/property",verbose_name="Side image",blank=True)
     property_video = models.CharField(max_length=2000,verbose_name="Iframe of your property video",blank=True)
     title = models.CharField(max_length=60,verbose_name="Title")
-    content = models.CharField(max_length=200,verbose_name="Content Box")
+    content = models.CharField(max_length=200,verbose_name="Content Box",blank=True)
     about_this = RichTextField(verbose_name="About This Project")
     loacation = models.CharField(max_length=2000,verbose_name="Google location of Property",blank=True)
     number = models.PositiveIntegerField(verbose_name="Serial Number")
-    price = models.PositiveIntegerField(verbose_name="Price")
-    area  = models.PositiveIntegerField(verbose_name="Area In Squre Ft.")
-    hall = models.PositiveIntegerField(verbose_name="Number of Hall")
-    beds = models.PositiveIntegerField(verbose_name="Number of Bedroom")
-    bath = models.PositiveIntegerField(verbose_name="Nomber of Baths")
+    price = models.PositiveIntegerField(verbose_name="Price",blank=True)
+    area  = models.PositiveIntegerField(verbose_name="Area In Squre Ft.",blank=True)
+    hall = models.PositiveIntegerField(verbose_name="Number of Hall",blank=True)
+    beds = models.PositiveIntegerField(verbose_name="Number of Bedroom",blank=True)
+    bath = models.PositiveIntegerField(verbose_name="Nomber of Baths",blank=True)
     
 
 
