@@ -22,13 +22,13 @@
         {% for about in aboutus %}
         <div class="col-sm-12">
           <div class="about-img-box">
-            <img src="{{ about.img_1.url }}" alt="" class="img-fluid">
+            <img src="{{ about.img_1.url }}" alt="about us" class="img-fluid">
           </div>
         </div>
         <div class="col-md-12 section-t8">
           <div class="row">
             <div class="col-md-6 col-lg-5">
-              <img src="{{ about.img_2.url }}" alt="" class="img-fluid">
+              <img src="{{ about.img_2.url }}" alt="logo" class="img-fluid">
             </div>
             <div class="col-lg-2  d-none d-lg-block">
             </div>
@@ -175,7 +175,7 @@
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img style="height:400px; width:100%;"src="{{ arc.img.url }}" alt="" class="img-d img-fluid">
+              <img style="height:400px; width:100%;"src="{{ arc.img.url }}" alt="Team Member" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -236,7 +236,7 @@
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="{{port.photo.url }} " alt="" class="img-b img-fluid">
+              <img src="{{port.photo.url }} " alt="{{ port.field }}" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -275,7 +275,7 @@
               
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="{{ testi.prop_img.url }}" alt="" class="img-fluid">
+                  <img src="{{ testi.prop_img.url }}" alt="{{ testi.name }}" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
