@@ -1,17 +1,12 @@
 from django.urls import path,include
 from .views import home,contact,header_detail_view,privacypolicy,testimonal_add,carrier,Project_detail,Carrier_detail
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import Headersitemaps,Staticsitemaps,Pricesitemaps,Projectsitemaps,Careersitemaps,Careerphotositemaps,Servicessitemaps
+from .sitemaps import Headersitemaps,Staticsitemaps,Projectsitemaps,Careersitemaps
 sitemaps = {
     'post': Headersitemaps,
     'static':Staticsitemaps,
     'projects':Projectsitemaps,
     'career':Careersitemaps,
-    'career_photo':Careerphotositemaps,
-    'price':Pricesitemaps,
-    'service':Servicessitemaps,
-
-
 }
 
 urlpatterns = [

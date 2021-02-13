@@ -4,40 +4,40 @@ from django.urls import reverse
 
 class Headersitemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Header.objects.all()
 
 class Projectsitemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Projects.objects.all()
     
 class Careersitemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Career.objects.all()
 
 class Pricesitemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Price.objects.all()
 
 class Servicessitemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Services.objects.all()
 
 class Careerphotositemaps(Sitemap):
     
-    def item(self):
+    def items(self):
         return Career_header.objects.all()
 
 
     
 class Staticsitemaps(Sitemap):
     
-    def item(self):
-        return ['home','post','privacy','contact',"testimonial_add","career",'detail','career_detail','privacy']
+    def items(self):
+        return ['home','privacy','contact',"testimonial_add","career"]
 
     def location(self,item):
         return reverse(item)
