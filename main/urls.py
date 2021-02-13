@@ -1,5 +1,21 @@
 from django.urls import path,include
-from .views import home,contact,header_detail_view,privacypolicy,testimonal_add,carrier,Project_detail,Carrier_detail
+from .views import (
+    home,
+    contact,
+    header_detail_view,
+    privacypolicy,
+    testimonal_add,
+    carrier,
+    Project_detail,
+    Carrier_detail,
+    portfollio,
+    blog,
+    Proposed_Projects_detail,
+    Past_Projects_detail,
+    Current_Projects_detail,
+
+
+    )
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import Headersitemaps,Staticsitemaps,Projectsitemaps,Careersitemaps
 sitemaps = {
@@ -11,6 +27,10 @@ sitemaps = {
 
 urlpatterns = [
     path("",home,name="home"),
+    path("portfolio/",portfollio,name="portfolio"),
+    path("portfolio/past/<int:pk>",Past_Projects_detail.as_view(),name="past_projects"),
+    path("portfolio/current/<int:pk>",Current_Projects_detail.as_view(),name="current_projects"),
+    path("portfolio/proposed/<int:pk>",Proposed_Projects_detail.as_view(),name="proposed_projects"),
     path("conatct/",contact,name="contact"),
     path("detail/<int:pk>",header_detail_view.as_view(),name="post"),
     path("privacy&policy/",privacypolicy,name="privacy"),

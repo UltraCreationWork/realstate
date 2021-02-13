@@ -18,7 +18,15 @@ from .models import (
     Footer,
     PrivacyPolicy,
     Career,
-    Career_header
+    Career_header,
+    Blog,
+    Past_Projects,
+    Current_Projects,
+    Proposed_Projects,
+    Comment,
+    Current_Projects_description,
+    Past_Projects_description,
+    Proposed_Projects_description
     )
 
 
@@ -97,6 +105,41 @@ def carrier(request):
 class Carrier_detail(DetailView):
     template_name = "career_detail.html"
     model = Career
+
+
+def portfollio(request):
+    data = {
+        "proposed":Proposed_Projects.objects.all(),
+        "past":Past_Projects.objects.all(),
+        "current":Current_Projects.objects.all(),
+        "past_desc":Past_Projects_description.objects.all()[:1],
+        "current_desc":Current_Projects_description.objects.all()[:1],
+        "proposed_desc":Proposed_Projects_description.objects.all()[:1] 
+    }
+    return render(request,"portfollio.html",data)
+
+
+class Proposed_Projects_detail(DetailView):
+    template_name = "proposed_projects.html"
+    model = Proposed_Projects
+
+class Past_Projects_detail(DetailView):
+    template_name = "past_projects.html"
+    model = Past_Projects
+
+class Current_Projects_detail(DetailView):
+    template_name = "current_projects.html"
+    model = Current_Projects
+
+
+
+def blog(request):
+    return render(request,"blog.html")
+
+class blog_details(DetailView):
+    template_name = "blog_detail.html"
+    model = Blog
+
 
 
 

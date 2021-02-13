@@ -3,7 +3,14 @@ from ckeditor.fields import RichTextField
 from phonenumber_field.modelfields import PhoneNumberField
 from django.shortcuts import reverse
 
-
+catagory = (
+    ("Commercial","Commercial"),
+    ("Residential","Residential"),
+    ("Clinic/Hospital","Clinic/Hospital"),
+    ("Institutional","Institutional"),
+    ("Interior","Interior"),
+    ("Architecture","Architecture")
+)
 
 class Artitecture(models.Model):
     name = models.CharField(max_length=15,verbose_name="Architecture Name")
@@ -308,3 +315,153 @@ class Career(models.Model):
     
     class Meta:
         ordering = ["number"]
+
+
+class Proposed_Projects(models.Model):
+    project_number  = models.PositiveIntegerField(verbose_name="Serial Number")
+    filter_by       = models.CharField(choices=catagory,max_length=100,verbose_name="filter By")
+    project_title   = models.CharField(max_length=100,verbose_name="Title",blank=True)
+    clint_name      = models.CharField(max_length=200,verbose_name="Name",blank=True)
+    loc             = models.CharField(max_length=500,verbose_name="Address of this Project",blank=True)
+    main_image      = models.ImageField(upload_to="projects/proposed_projects",verbose_name="main Image")
+    second_image    = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Second Image")
+    third_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Third Image")
+    fouth_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Fourth Image")
+    disc            = RichTextField(verbose_name="Description")
+    date            = models.DateField(verbose_name="Date")
+
+    def __str__(self):
+        return self.project_title
+    
+    def get_absolute_url(self):
+        return reverse("proposed_projects",kwargs={"pk":self.pk})
+
+    class Meta:
+        ordering = ["project_number"]
+
+class Past_Projects(models.Model):
+    project_number  = models.PositiveIntegerField(verbose_name="Serial Number")
+    filter_by       = models.CharField(choices=catagory,max_length=100,verbose_name="filter By")
+    project_title   = models.CharField(max_length=100,verbose_name="Title",blank=True)
+    clint_name      = models.CharField(max_length=200,verbose_name="Name",blank=True)
+    loc             = models.CharField(max_length=500,verbose_name="Address of this Project",blank=True)
+    main_image      = models.ImageField(upload_to="projects/proposed_projects",verbose_name="main Image")
+    second_image    = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Second Image")
+    third_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Third Image")
+    fouth_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Fourth Image")
+    disc            = RichTextField(verbose_name="Description")
+    date            = models.DateField(verbose_name="Date")
+
+    def __str__(self):
+        return self.project_title
+
+    def get_absolute_url(self):
+        return reverse("past_projects",kwargs={"pk":self.pk})
+
+    class Meta:
+        ordering = ["project_number"]
+
+
+class Current_Projects(models.Model):
+    project_number  = models.PositiveIntegerField(verbose_name="Serial Number")
+    filter_by       = models.CharField(choices=catagory,max_length=100,verbose_name="filter By")
+    project_title   = models.CharField(max_length=100,verbose_name="Title",blank=True)
+    clint_name      = models.CharField(max_length=200,verbose_name="Name",blank=True)
+    loc             = models.CharField(max_length=500,verbose_name="Address of this Project",blank=True)
+    main_image      = models.ImageField(upload_to="projects/proposed_projects",verbose_name="main Image")
+    second_image    = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Second Image")
+    third_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Third Image")
+    fouth_image     = models.ImageField(upload_to="projects/proposed_projects",verbose_name="Fourth Image")
+    disc            = RichTextField(verbose_name="Description")
+    date            = models.DateField(verbose_name="Date")
+
+    def __str__(self):
+        return self.project_title
+
+    def get_absolute_url(self):
+        return reverse("current_projects",kwargs={"pk":self.pk})
+        
+    class Meta:
+        ordering = ["project_number"]
+
+
+
+
+class Blog(models.Model):
+    title       = models.CharField(max_length=100,verbose_name="title")
+    blog_image  = models.ImageField(upload_to="blog_photos/",verbose_name="Post Image")
+    disc        = RichTextField()
+    catagory    = models.CharField(choices=catagory,max_length=200,verbose_name="Category")
+    date        = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog-post",kwargs={"pk":self.pk})
+
+    
+    @property
+    def comment_count(self):
+        return Comment.objects.filter(post=self).count()
+    
+    @property
+    def get_comments(self):
+        return self.comments.all().order_by('-date')
+
+    class Meta:
+        ordering = ["-date"]
+
+class Comment(models.Model):
+    post = models.ForeignKey("Blog",on_delete=models.CASCADE)
+    name = models.CharField(max_length=200,verbose_name="name")
+    loacation = models.CharField(max_length=300,verbose_name="location")
+    disc = RichTextField(verbose_name="Description")
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+class Proposed_Projects_description(models.Model):
+    serial_no = models.PositiveIntegerField(verbose_name="Serial Number")
+    content = RichTextField(verbose_name="Description")
+
+    class Meta:
+        ordering = ['-serial_no']
+    
+class Past_Projects_description(models.Model):
+    serial_no = models.PositiveIntegerField(verbose_name="Serial Number")
+    content = RichTextField(verbose_name="Description")
+
+    class Meta:
+        ordering = ['-serial_no']
+    
+class Current_Projects_description(models.Model):
+    serial_no = models.PositiveIntegerField(verbose_name="Serial Number")
+    content = RichTextField(verbose_name="Description")
+
+    class Meta:
+        ordering = ['-serial_no']
+    
+    
+    
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+        
+
+
+
+
+
+

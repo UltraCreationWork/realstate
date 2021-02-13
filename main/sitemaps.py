@@ -17,21 +17,6 @@ class Careersitemaps(Sitemap):
     def items(self):
         return Career.objects.all()
 
-class Pricesitemaps(Sitemap):
-    
-    def items(self):
-        return Price.objects.all()
-
-class Servicessitemaps(Sitemap):
-    
-    def items(self):
-        return Services.objects.all()
-
-class Careerphotositemaps(Sitemap):
-    
-    def items(self):
-        return Career_header.objects.all()
-
 
     
 class Staticsitemaps(Sitemap):
