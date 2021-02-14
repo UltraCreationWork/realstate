@@ -13,6 +13,7 @@ from .views import (
     Proposed_Projects_detail,
     Past_Projects_detail,
     Current_Projects_detail,
+    blog_details,
 
 
     )
@@ -29,6 +30,9 @@ urlpatterns = [
     path("",home,name="home"),
     path("portfolio/",portfollio,name="portfolio"),
     path("portfolio/past/<int:pk>",Past_Projects_detail.as_view(),name="past_projects"),
+    path("blog/",blog,name="blog"),
+    # path("thankyou",pass_comment,name="comment"),
+    path("blog/post-detail/<int:pk>",blog_details,name="blog-post"),
     path("portfolio/current/<int:pk>",Current_Projects_detail.as_view(),name="current_projects"),
     path("portfolio/proposed/<int:pk>",Proposed_Projects_detail.as_view(),name="proposed_projects"),
     path("conatct/",contact,name="contact"),

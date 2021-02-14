@@ -1,7 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404,reverse
 from django.core.mail import send_mail
 from django.template.loader import get_template
 from django.views.generic import DetailView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import ( 
     website_title,
     Header,
@@ -29,7 +30,7 @@ from .models import (
     Proposed_Projects_description
     )
 
-
+import random
 
 
 def home(request):
@@ -134,11 +135,27 @@ class Current_Projects_detail(DetailView):
 
 
 def blog(request):
-    return render(request,"blog.html")
+    data = {
+        "blog":Blog.objects.all()
+    }
+    return render(request,"blog.html",data)
 
-class blog_details(DetailView):
-    template_name = "blog_detail.html"
-    model = Blog
+
+
+def blog_details(request, pk):
+    object = get_object_or_404(Blog, pk=pk)
+    if request.method == "POST":
+        obj = Comment()
+        obj.post = object
+        obj.name = request.POST.get("name")
+        obj.email = request.POST.get("email")
+        obj.loacation = request.POST.get("location")
+        obj.disc = request.POST.get("comment")
+        obj.save()
+        return redirect(reverse('blog-post', kwargs={'pk': object.pk}))
+    return render(request,"blog_detail.html",{"object":object,"comments":Comment.objects.all(),"image_id":random.randint(1,1000)})
+
+
 
 
 

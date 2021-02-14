@@ -390,6 +390,7 @@ class Current_Projects(models.Model):
 class Blog(models.Model):
     title       = models.CharField(max_length=100,verbose_name="title")
     blog_image  = models.ImageField(upload_to="blog_photos/",verbose_name="Post Image")
+    overview    = models.CharField(max_length=300,verbose_name="overview")
     disc        = RichTextField()
     catagory    = models.CharField(choices=catagory,max_length=200,verbose_name="Category")
     date        = models.DateTimeField(auto_now_add=True)
@@ -415,7 +416,8 @@ class Blog(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey("Blog",on_delete=models.CASCADE)
     name = models.CharField(max_length=200,verbose_name="name")
-    loacation = models.CharField(max_length=300,verbose_name="location")
+    email = models.EmailField(verbose_name="email")
+    loacation = models.CharField(max_length=300,verbose_name="location",blank=True)
     disc = RichTextField(verbose_name="Description")
     date = models.DateTimeField(auto_now_add=True)
 
