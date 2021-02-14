@@ -18,12 +18,16 @@ from .views import (
 
     )
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import Headersitemaps,Staticsitemaps,Projectsitemaps,Careersitemaps
+from .sitemaps import Headersitemaps,Staticsitemaps,Projectsitemaps,Careersitemaps,ProposedProjectsitemaps,PastProjectsitemaps,CurruntProjectsitemaps,Blogsitemaps
 sitemaps = {
     'post': Headersitemaps,
     'static':Staticsitemaps,
     'projects':Projectsitemaps,
     'career':Careersitemaps,
+    "past":PastProjectsitemaps,
+    "current":CurruntProjectsitemaps,
+    "proposed":ProposedProjectsitemaps,
+    "blog":Blogsitemaps
 }
 
 urlpatterns = [
