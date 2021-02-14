@@ -135,8 +135,19 @@ class Current_Projects_detail(DetailView):
 
 
 def blog(request):
+    post_list = Blog.objects.all()
+    paginator = Paginator(post_list, 6)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
     data = {
-        "blog":Blog.objects.all()
+        'blog': paginated_queryset,
+        'page_request_var': page_request_var,
     }
     return render(request,"blog.html",data)
 
