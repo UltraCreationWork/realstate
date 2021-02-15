@@ -58,10 +58,10 @@
 
   <!-- ======= Services Section ======= -->
   {% include 'services.html' %}
- <!-- End Services Section -->
+  <!-- End Services Section -->
 
   <!-- ======= Latest Properties Section ======= -->
- <!-- <section id="properties" class="section-property section-t8">
+  <!-- <section id="properties" class="section-property section-t8">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -125,7 +125,7 @@
     </div>
   </section> -->
 
- 
+
   <section id="leadership" class="section-agents section-t8">
     <div class="container">
       <div class="row">
@@ -142,7 +142,7 @@
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img style="height:400px; width:100%;"src="{{ arc.img.url }}" alt="Team Member" class="img-d img-fluid">
+              <img style="height:400px; width:100%;" src="{{ arc.img.url }}" alt="Team Member" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -187,41 +187,8 @@
   </section><!-- End Agents Section -->
 
   <!-- ======= Latest News Section ======= -->
-  <section id="project" class="section-news section-t8">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">Projects</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="new-carousel" class="owl-carousel owl-theme">
-        {% for port in projects %}
-        <div class="carousel-item-c">
-          <div class="card-box-b card-shadow news-box">
-            <div class="img-box-b">
-              <img src="{{port.photo.url }} " alt="{{ port.field }}" class="img-b img-fluid">
-            </div>
-            <div class="card-overlay">
-              <div class="card-header-b">
-                <div class="card-category-b">
-                  <a href="{{ port.get_absolute_url }}" class="category-b">{{ port.field }}</a>
-                </div>
-                <div class="card-date">
-                  <span class="date-b">{{ port.date }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section><!-- End Latest News Section -->
 
+  {% include 'projects.html' %}
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonial" class="section-testimonials section-t8 nav-arrow-a">
     <div class="container">
@@ -239,7 +206,7 @@
         <div class="carousel-item-a">
           <div class="testimonials-box">
             <div class="row">
-              
+
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
                   <img src="{{ testi.prop_img.url }}" alt="{{ testi.name }}" class="img-fluid">
@@ -268,7 +235,7 @@
     </div>
   </section><!-- End Testimonials Section -->
   {% include 'price.html' %}
-<!-- End Pricing Section -->
+  <!-- End Pricing Section -->
   <section id="contact" class="intro-single">
     <div class="container">
       {% for cont in contact_details %}
@@ -292,7 +259,7 @@
         <div class="col-sm-12">
           <div class="contact-map box">
             <div id="map" class="contact-map">
-             {{ cont.location | safe }}
+              {{ cont.location | safe }}
             </div>
           </div>
         </div>
@@ -304,35 +271,41 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
-                      <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                      <input type="text" name="name" class="form-control form-control-lg form-control-a"
+                        placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                       <div class="validate"></div>
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
-                      <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                      <input name="email" type="email" class="form-control form-control-lg form-control-a"
+                        placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
                       <div class="validate"></div>
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
-                      <input name="mobile" type="number" class="form-control form-control-lg form-control-a" placeholder="Your Mobile No." data-rule="minlen:10" data-rule="maxlen:14" data-msg="Please enter a valid mobile number">
+                      <input name="mobile" type="number" class="form-control form-control-lg form-control-a"
+                        placeholder="Your Mobile No." data-rule="minlen:10" data-rule="maxlen:14"
+                        data-msg="Please enter a valid mobile number">
                       <div class="validate"></div>
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                      <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                      <input type="text" name="subject" class="form-control form-control-lg form-control-a"
+                        placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
                       <div class="validate"></div>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea name="message" class="form-control" name="message" cols="45" rows="8" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                      <textarea name="message" class="form-control" name="message" cols="45" rows="8"
+                        data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                       <div class="validate"></div>
                     </div>
                   </div>
-                  
+
                   <div class="col-md-12 mb-3">
                     <div class="mb-3">
                       <div class="loading">Loading</div>
@@ -380,7 +353,7 @@
                   <div class="icon-box-content">
                     <p class="mb-1">
                       {{ cont.address }}
-                      <br> 
+                      <br>
                       {{ cont.country }}
                     </p>
                   </div>

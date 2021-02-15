@@ -1,0 +1,45 @@
+<style>
+    .card-header-b .category-b {
+        font-size: .9rem;
+        background-color: #fbfffb;
+        padding: .3rem .7rem;
+        color: #000000;
+        letter-spacing: 0.030em;
+        border-radius: 50px;
+        text-decoration: none;
+    }
+</style>
+<section id="project" class="section-news section-t8">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-wrap d-flex justify-content-between">
+                    <div class="title-box">
+                        <h2 class="title-a">Projects</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="new-carousel" class="owl-carousel owl-theme">
+            {% for port in projects %}
+            <div class="carousel-item-c">
+                <div class="card-box-b card-shadow news-box">
+                    <div class="img-box-b">
+                        <img src="{{port.photo.url }} " alt="{{ port.field }}" class="img-b img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-header-b">
+                            <div class="card-category-b">
+                                <a href="{{ port.get_absolute_url }}" class="category-b">{{ port.field }}</a>
+                            </div>
+                            <!-- <div class="card-date">
+                                <span class="date-b">{{ port.date }}</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- End Latest News Section -->
