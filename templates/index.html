@@ -238,17 +238,23 @@
   <!-- End Pricing Section -->
   <section id="contact" class="intro-single">
     <div class="container">
-      {% for cont in contact_details %}
       <div class="row">
+        {% for cont in contact_details %}
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Contact US</h1>
             <span class="color-text-a">{{ cont.content|safe }}</span>
           </div>
         </div>
+        <div class="col">
+          <div class="contact-map box">
+            <div id="map" class="contact-map">
+              {{ cont.location | safe }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
   </section><!-- End Intro Single-->
 
   <!-- ======= Contact Single ======= -->
@@ -256,13 +262,6 @@
     <div class="container">
       {% for cont in contact_details %}
       <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-map box">
-            <div id="map" class="contact-map">
-              {{ cont.location | safe }}
-            </div>
-          </div>
-        </div>
         <div class="col-sm-12 section-t8">
           <div class="row">
             <div class="col-md-7">
@@ -388,6 +387,11 @@
                         <li class="list-inline-item">
                           <a href="{{ cont.social_link_4 }}" class="link-one">
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="http://wa.me/+918448448652">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
                           </a>
                         </li>
                       </ul>
