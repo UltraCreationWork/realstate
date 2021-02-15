@@ -51,25 +51,20 @@ class Header(models.Model):
     status = models.CharField(choices=choise,verbose_name="Perpose",max_length=10,blank=True)
     address = models.CharField(verbose_name="Address",max_length=100,blank=True)
     header_img = models.ImageField(upload_to="realestate/header",verbose_name="Header Image")
-    additional_img_1 = models.ImageField(upload_to="realestate/property",verbose_name="Side image",blank=True)
-    additional_img_2 = models.ImageField(upload_to="realestate/property",verbose_name="Side image",blank=True)
+    additional_img_1 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
+    additional_img_2 = models.ImageField(upload_to="realestate/property",verbose_name="Side image")
     property_video = models.CharField(max_length=2000,verbose_name="Iframe of your property video",blank=True)
     title = models.CharField(max_length=60,verbose_name="Title")
     content = models.CharField(max_length=200,verbose_name="Content Box",blank=True)
     about_this = RichTextField(verbose_name="About This Project")
     loacation = models.CharField(max_length=2000,verbose_name="Google location of Property",blank=True)
     number = models.PositiveIntegerField(verbose_name="Serial Number")
-    price = models.PositiveIntegerField(verbose_name="Price",blank=True)
-    area  = models.PositiveIntegerField(verbose_name="Area In Squre Ft.",blank=True)
-    hall = models.PositiveIntegerField(verbose_name="Number of Hall",blank=True)
-    beds = models.PositiveIntegerField(verbose_name="Number of Bedroom",blank=True)
-    bath = models.PositiveIntegerField(verbose_name="Nomber of Baths",blank=True)
+    price = models.PositiveIntegerField(verbose_name="Price",blank=True,null=True)
+    area  = models.PositiveIntegerField(verbose_name="Area In Squre Ft.",blank=True,null=True)
+    hall = models.PositiveIntegerField(verbose_name="Number of Hall",blank=True,null=True)
+    beds = models.PositiveIntegerField(verbose_name="Number of Bedroom",blank=True,null=True)
+    bath = models.PositiveIntegerField(verbose_name="Nomber of Baths",blank=True,null=True)
     
-
-
-
-
-
 
     def __str__(self):
         return self.title
